@@ -13,22 +13,37 @@ class SearchTextField extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: const Icon(
           Icons.search,
-          color: Colors.grey,
-          size: 26,
+          color: primaryColor,
+          size: 15,
         ),
-        suffixIcon: const Icon(
-          Icons.scatter_plot_outlined,
-          color: secondaryColor,
-          size: 26,
+        suffixIcon: Container(
+          width: 20,
+          height: 20,
+          margin: const EdgeInsets.all(5),
+          // padding: const EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            color: secondaryColor,
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: const Icon(
+            Icons.wallpaper_sharp,
+            color: Colors.white,
+            size: 15,
+          ),
         ),
         // Helper Text: Search for your parcel
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: "Enter the receipt number ...",
-        labelStyle: const TextStyle(color: subtitleColor),
+        labelStyle: const TextStyle(
+          color: Color(0xFFA1A1A1),
+          fontSize: 12,
+          fontWeight: FontWeight.normal,
+        ),
         filled: true,
         fillColor: Colors.white,
-        border: OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(40),
+          borderSide: const BorderSide(width: 1, color: Colors.white),
         ),
         isDense: true,
       ),
