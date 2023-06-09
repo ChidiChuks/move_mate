@@ -35,7 +35,7 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                     const Text(
                       "Tracking",
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 13.0,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),
@@ -47,7 +47,7 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                     Container(
                       // margin: const EdgeInsets.all(40.0),
                       height: 263.0,
-                      width: 359.0,
+                      width: double.infinity / 2,
                       // color: Colors.white,
                       decoration: const BoxDecoration(
                         color: Colors.white,
@@ -69,47 +69,56 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             // First Container
                             Container(
                               margin: const EdgeInsets.all(8.0),
                               // First Container Row
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  // Two Texts
-                                  const Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      // First Text
-                                      Text(
-                                        "Shipment Number",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.grey,
-                                        ),
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    // Two Texts
+                                    Container(
+                                      margin:
+                                          const EdgeInsets.only(right: 75.0),
+                                      child: const Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          // First Text
+                                          Text(
+                                            "Shipment Number",
+                                            style: TextStyle(
+                                              fontSize: 10.0,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          // Second Text
+                                          Text(
+                                            "NEJ20089934122231",
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      // Second Text
-                                      Text(
-                                        "NEJ20089934122231",
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  // Image
-                                  SizedBox(
-                                    height: 40.0,
-                                    width: 40.0,
-                                    child: Image.asset("assets/small_car.png"),
-                                  ),
-                                ],
+                                    ),
+                                    // Image
+                                    SizedBox(
+                                      height: 40.0,
+                                      width: 40.0,
+                                      child:
+                                          Image.asset("assets/small_car.png"),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             const Padding(
@@ -119,164 +128,182 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                             // Second Container
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  // Container One
-                                  Row(
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      // Image Container
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: SizedBox(
-                                          height: 25,
-                                          width: 25,
-                                          child: Image.asset("assets/send.png"),
+                                      // Container One
+                                      Container(
+                                        margin:
+                                            const EdgeInsets.only(right: 35.0),
+                                        child: Row(
+                                          children: [
+                                            // Image Container
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: SizedBox(
+                                                height: 25.0,
+                                                width: 25.0,
+                                                child: Image.asset(
+                                                    "assets/send.png"),
+                                              ),
+                                            ),
+                                            // Column for Two texts
+                                            const Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                // Two Texts Container
+                                                Text(
+                                                  "Sender",
+                                                  style: TextStyle(
+                                                    fontSize: 10.0,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.grey,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  "Atlanta, 5243",
+                                                  style: TextStyle(
+                                                    fontSize: 12.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      // Column for Two texts
+                                      // Container Two
                                       const Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          // Two Texts Container
+                                          // Text
                                           Text(
-                                            "Sender",
+                                            "Time",
                                             style: TextStyle(
-                                              fontSize: 10,
+                                              fontSize: 10.0,
                                               fontWeight: FontWeight.w500,
                                               color: Colors.grey,
                                             ),
                                           ),
-                                          Text(
-                                            "Atlanta, 5243",
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                            ),
+                                          // Second Row
+                                          Row(
+                                            children: [
+                                              // Circle
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Icon(
+                                                  Icons.circle,
+                                                  size: 10.0,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                              // Text
+                                              Text(
+                                                "2 days - 3 days",
+                                                style: TextStyle(
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
                                     ],
                                   ),
-                                  // Container Two
-                                  const Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      // Text
-                                      Text(
-                                        "Time",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      // Second Row
-                                      Row(
-                                        children: [
-                                          // Circle
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Icon(
-                                              Icons.circle,
-                                              size: 10,
-                                              color: Colors.green,
-                                            ),
-                                          ),
-                                          // Text
-                                          Text(
-                                            "2 days - 3 days",
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                ),
                               ),
                             ),
                             // Third Container
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  // Container One
-                                  Row(
-                                    children: [
-                                      // Image Container
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: SizedBox(
-                                          height: 25,
-                                          width: 25,
-                                          child:
-                                              Image.asset("assets/receive.png"),
-                                        ),
-                                      ),
-                                      // Column for Two texts
-                                      const Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    // Container One
+                                    Container(
+                                      margin:
+                                          const EdgeInsets.only(right: 35.0),
+                                      child: Row(
                                         children: [
-                                          // Two Texts Container
-                                          Text(
-                                            "Receiver",
-                                            style: TextStyle(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.grey,
+                                          // Image Container
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: SizedBox(
+                                              height: 25.0,
+                                              width: 25.0,
+                                              child: Image.asset(
+                                                  "assets/receive.png"),
                                             ),
                                           ),
-                                          Text(
-                                            "Chicago, 6342",
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                            ),
+                                          // Column for Two texts
+                                          const Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              // Two Texts Container
+                                              Text(
+                                                "Receiver",
+                                                style: TextStyle(
+                                                  fontSize: 10.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                              Text(
+                                                "Chicago, 6342",
+                                                style: TextStyle(
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
-                                    ],
-                                  ),
-                                  // Container Two
-                                  const Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      // Text
+                                    ),
+                                    // Container Two
+                                    const Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        // Text
 
-                                      // Second Row
-                                      Text(
-                                        "Status",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.grey,
+                                        // Second Row
+                                        Text(
+                                          "Status",
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.grey,
+                                          ),
                                         ),
-                                      ),
-                                      // Text
-                                      Text(
-                                        "Waiting to collect",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
+                                        // Text
+                                        Text(
+                                          "Waiting to collect",
+                                          style: TextStyle(
+                                            fontSize: 12.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             const Padding(
@@ -292,14 +319,14 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                                   // Circle
                                   Icon(
                                     Icons.add,
-                                    size: 15,
+                                    size: 15.0,
                                     color: secondaryColor,
                                   ),
                                   // Text
                                   Text(
                                     "Add Stop",
                                     style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 12.0,
                                       fontWeight: FontWeight.bold,
                                       color: secondaryColor,
                                     ),
@@ -317,7 +344,7 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                     const Text(
                       "Available vehicles",
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 13.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
