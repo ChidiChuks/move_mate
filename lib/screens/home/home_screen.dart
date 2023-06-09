@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:move_mate/constants/color.dart';
+import 'package:move_mate/screens/calculate/calculate_screen.dart';
 
 import '../../widgets/search_textfield.dart';
 import 'home_body_screen.dart';
@@ -21,13 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // Home Page
       const HomeBodyScreen(),
       // Calculate Page
-      const Center(
-        child: Icon(
-          Icons.calculate_outlined,
-          size: 32.0,
-          color: primaryColor,
-        ),
-      ),
+      const CalculateScreen(),
       // Shipment History Page
       const Center(
         child: Icon(
