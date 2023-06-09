@@ -40,12 +40,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(/*title: 'MoveMate'*/),
-      routes: {
-        '/homeScreen': (context) => const HomeScreen(),
-        '/calculateScreen': (context) => const CalculateScreen(),
-        '/shipmentScreen': (context) => const ShipmentScreen(),
-        '/profileScreen': (context) => const ProfileScreen(),
-      },
     );
   }
 }
