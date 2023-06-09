@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:move_mate/constants/color.dart';
 import 'package:move_mate/screens/calculate/calculate_screen.dart';
+import 'package:move_mate/screens/profile/profile_screen.dart';
 
 import '../../widgets/search_textfield.dart';
+import '../shipment/shipment_screen.dart';
 import 'home_body_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,21 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
       // Calculate Page
       const CalculateScreen(),
       // Shipment History Page
-      const Center(
-        child: Icon(
-          Icons.history_outlined,
-          size: 32.0,
-          color: primaryColor,
-        ),
-      ),
+      const ShipmentScreen(),
       // Profile Page
-      const Center(
-        child: Icon(
-          Icons.person_outline,
-          size: 32.0,
-          color: primaryColor,
-        ),
-      ),
+      const ProfileScreen(),
     ];
     // bottomNavigationBarItems
     final kBottomNavBarItems = <BottomNavigationBarItem>[
