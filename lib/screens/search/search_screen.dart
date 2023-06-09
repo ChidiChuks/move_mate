@@ -12,7 +12,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Calculate"),
+        title: const Text("Search"),
       ),
     );
   }

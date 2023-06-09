@@ -30,6 +30,36 @@ class _HomeScreenState extends State<HomeScreen> {
       // Profile Page
       const ProfileScreen(),
     ];
+
+    // ignore: no_leading_underscores_for_local_identifiers
+    _changeTab(int index) {
+      setState(() {
+        _currentTabIndex = index;
+        // switch (index) {
+        //   case 0:
+        //     {
+        //       const HomeScreen();
+        //     }
+        //     break;
+        //   case 1:
+        //     {
+        //       const CalculateScreen();
+        //     }
+        //     break;
+        //   case 2:
+        //     {
+        //       const ShipmentScreen();
+        //     }
+        //     break;
+        //   case 3:
+        //     {
+        //       const ProfileScreen();
+        //     }
+        //     break;
+        // }
+      });
+    }
+
     // bottomNavigationBarItems
     final kBottomNavBarItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(
@@ -46,11 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
       items: kBottomNavBarItems,
       currentIndex: _currentTabIndex,
       type: BottomNavigationBarType.fixed,
-      onTap: (int index) {
-        setState(() {
-          _currentTabIndex = index;
-        });
-      },
+      onTap: (index) => _changeTab(index),
     );
     return Scaffold(
       appBar: AppBar(

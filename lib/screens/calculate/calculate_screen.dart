@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/color.dart';
+import '../../widgets/search_textfield.dart';
+
 class CalculateScreen extends StatefulWidget {
   const CalculateScreen({super.key});
 
@@ -10,6 +13,8 @@ class CalculateScreen extends StatefulWidget {
 class _CalculateScreenState extends State<CalculateScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }

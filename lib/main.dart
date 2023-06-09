@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:move_mate/screens/calculate/calculate_screen.dart';
+import 'package:move_mate/screens/home/home_screen.dart';
+import 'package:move_mate/screens/profile/profile_screen.dart';
+import 'package:move_mate/screens/shipment/shipment_screen.dart';
 import 'package:move_mate/screens/splash_screen.dart';
 
 void main() {
@@ -36,6 +40,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(/*title: 'MoveMate'*/),
+      routes: {
+        '/homeScreen': (context) => const HomeScreen(),
+        '/calculateScreen': (context) => const CalculateScreen(),
+        '/shipmentScreen': (context) => const ShipmentScreen(),
+        '/profileScreen': (context) => const ProfileScreen(),
+      },
     );
   }
 }
