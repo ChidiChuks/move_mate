@@ -15,11 +15,29 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
+  late Animation<double> animation;
+  late AnimationController controller;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+
+    controller =
+        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+
+    // #docregion addListener
+    animation = Tween<double>(begin: 0, end: 650).animate(controller)
+      ..addListener(() {
+        // #enddocregion addListener
+        setState(() {
+          // The state that has changed here is the animation object’s value.
+        });
+        // #docregion addListener
+      });
+    // #enddocregion addListener
+    controller.forward();
 
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -41,57 +59,65 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.white,
-            Colors.white70,
-          ], begin: Alignment.topRight, end: Alignment.bottomLeft),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Image.asset(
-                "assets/move_logo.png",
-                width: 250,
-              ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Center(
+          child: Container(
+            height: animation.value,
+            // width: animation.value,
+            width: double.infinity / 2,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [
+                Colors.white,
+                Colors.white70,
+              ], begin: Alignment.topRight, end: Alignment.bottomLeft),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                  bottom: 8.0, top: 2.0, right: 16.0, left: 16.0),
-              child: Text('Parcel tracker from another angle',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset(
+                    "assets/move_logo.png",
+                    width: 250,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                      bottom: 8.0, top: 2.0, right: 16.0, left: 16.0),
+                  child: Text('Parcel tracker from another angle',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                      bottom: 8.0, top: 2.0, right: 16.0, left: 16.0),
+                  child: Text(
+                    'Developed by: Chidiebere Chukwuma',
+                    style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                      bottom: 8.0, top: 2.0, right: 16.0, left: 16.0),
+                  child: Text(
+                    'Moniepoint\'s Assessment',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 9,
+                        color: Colors.blue),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: SpinKitRotatingCircle(
+                    color: Color(0xFFF27A22),
+                    size: 50.0,
+                  ),
+                ),
+              ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                  bottom: 8.0, top: 2.0, right: 16.0, left: 16.0),
-              child: Text(
-                'Developed by: Chidiebere Chukwuma',
-                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(
-                  bottom: 8.0, top: 2.0, right: 16.0, left: 16.0),
-              child: Text(
-                'Moniepoint\'s Assessment',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 9,
-                    color: Colors.blue),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: SpinKitRotatingCircle(
-                color: Color(0xFFF27A22),
-                size: 50.0,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
