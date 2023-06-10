@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:move_mate/constants/color.dart';
 import 'package:move_mate/screens/calculate/calculate_screen.dart';
 import 'package:move_mate/screens/profile/profile_screen.dart';
 

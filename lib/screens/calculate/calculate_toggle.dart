@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:move_mate/models/sending.dart';
 
 class CalculateToggle extends StatefulWidget {
   const CalculateToggle({super.key});

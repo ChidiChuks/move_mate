@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:move_mate/constants/color.dart';
 import 'package:move_mate/constants/size.dart';
-import 'package:move_mate/screens/calculate/calculate_screen.dart';
 import 'package:move_mate/screens/search/search_screen.dart';
-
-import '../../models/category.dart';
-import '../../widgets/search_textfield.dart';
 
 class HomeBodyScreen extends StatefulWidget {
   const HomeBodyScreen({super.key});

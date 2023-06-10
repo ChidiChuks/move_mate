@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:move_mate/screens/calculate/calculate_screen.dart';
-import 'package:move_mate/screens/home/home_screen.dart';
-import 'package:move_mate/screens/profile/profile_screen.dart';
-import 'package:move_mate/screens/shipment/shipment_screen.dart';
 import 'package:move_mate/screens/splash_screen.dart';
 
 void main() {
