@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen>
         AnimationController(duration: const Duration(seconds: 3), vsync: this);
 
     // #docregion addListener
-    animation = Tween<double>(begin: 0, end: 650).animate(controller)
+    animation = Tween<double>(begin: 0, end: 600).animate(controller)
       ..addListener(() {
         // #enddocregion addListener
         setState(() {
