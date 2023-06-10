@@ -8,7 +8,29 @@ class ProfileScreen extends StatefulWidget {
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen>
+    with SingleTickerProviderStateMixin {
+  late Animation<double> animation;
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+    // #docregion addListener
+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
+      ..addListener(() {
+        // #enddocregion addListener
+        setState(() {
+          // The state that has changed here is the animation object’s value.
+        });
+        // #docregion addListener
+      });
+    // #enddocregion addListener
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +50,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: ListView(
         children: <Widget>[
           Container(
-            height: 250,
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            height: animation.value,
+            width: animation.value,
+            // height: 250,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [primaryColor, secondaryColor],
