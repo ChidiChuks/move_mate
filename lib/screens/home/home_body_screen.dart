@@ -51,8 +51,15 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(40),
                           ),
-                          child: Image.asset(
-                            "assets/profile.png",
+                          child: const CircleAvatar(
+                            backgroundColor: Colors.white70,
+                            minRadius: 60.0,
+                            child: CircleAvatar(
+                              radius: 50.0,
+                              backgroundImage: NetworkImage(
+                                "https://avatars.githubusercontent.com/u/28824477?v=4",
+                              ),
+                            ),
                           ),
                         ),
                         // Column for two objects
