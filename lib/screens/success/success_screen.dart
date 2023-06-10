@@ -9,7 +9,29 @@ class SuccessScreen extends StatefulWidget {
   State<SuccessScreen> createState() => _SuccessScreenState();
 }
 
-class _SuccessScreenState extends State<SuccessScreen> {
+class _SuccessScreenState extends State<SuccessScreen>
+    with SingleTickerProviderStateMixin {
+  late Animation<double> animation;
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+    // #docregion addListener
+    animation = Tween<double>(begin: 0, end: 150).animate(controller)
+      ..addListener(() {
+        // #enddocregion addListener
+        setState(() {
+          // The state that has changed here is the animation object’s value.
+        });
+        // #docregion addListener
+      });
+    // #enddocregion addListener
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,24 +55,28 @@ class _SuccessScreenState extends State<SuccessScreen> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                Container(
-                  width: 150.0,
-                  height: 150.0,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: [
-                        primaryColor,
-                        secondaryColor,
-                      ],
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
+                SizedBox(
+                  height: animation.value,
+                  width: animation.value,
+                  child: Container(
+                    width: 150.0,
+                    height: 150.0,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        colors: [
+                          primaryColor,
+                          secondaryColor,
+                        ],
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                      ),
                     ),
-                  ),
-                  child: const Icon(
-                    Icons.cases_rounded,
-                    color: Colors.white,
-                    size: 80.0,
+                    child: const Icon(
+                      Icons.cases_rounded,
+                      color: Colors.white,
+                      size: 80.0,
+                    ),
                   ),
                 ),
                 const SizedBox(
