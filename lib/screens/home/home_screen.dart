@@ -3,7 +3,6 @@ import 'package:move_mate/constants/color.dart';
 import 'package:move_mate/screens/calculate/calculate_screen.dart';
 import 'package:move_mate/screens/profile/profile_screen.dart';
 
-import '../../widgets/search_textfield.dart';
 import '../shipment/shipment_screen.dart';
 import 'home_body_screen.dart';
 
@@ -35,28 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
     _changeTab(int index) {
       setState(() {
         _currentTabIndex = index;
-        // switch (index) {
-        //   case 0:
-        //     {
-        //       const HomeScreen();
-        //     }
-        //     break;
-        //   case 1:
-        //     {
-        //       const CalculateScreen();
-        //     }
-        //     break;
-        //   case 2:
-        //     {
-        //       const ShipmentScreen();
-        //     }
-        //     break;
-        //   case 3:
-        //     {
-        //       const ProfileScreen();
-        //     }
-        //     break;
-        // }
       });
     }
 

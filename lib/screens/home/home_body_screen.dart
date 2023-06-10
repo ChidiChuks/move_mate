@@ -121,6 +121,8 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                 ),
               ),
               Container(
+                width: double.infinity / 2,
+                height: 50.0,
                 padding: const EdgeInsets.all(2.0),
                 margin: const EdgeInsets.only(
                   top: 5.0,
@@ -128,7 +130,58 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
                   left: 10.0,
                   right: 10.0,
                 ),
-                child: const SearchTextField(),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.0),
+                    ),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Icon(
+                        Icons.search,
+                        color: primaryColor,
+                        size: 15,
+                      ),
+                      const Text(
+                        "|",
+                        style: TextStyle(
+                          color: Color(0xFFA1A1A1),
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const Text(
+                        "Enter the receipt number ...",
+                        style: TextStyle(
+                          color: Color(0xFFA1A1A1),
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      Container(
+                        width: 20,
+                        height: 20,
+                        margin: const EdgeInsets.all(5),
+                        // padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: secondaryColor,
+                          borderRadius: BorderRadius.circular(40),
+                        ),
+                        child: const Icon(
+                          Icons.wallpaper_sharp,
+                          color: Colors.white,
+                          size: 10,
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () => _navigateToNextScreen(context),
+                ),
               ),
             ],
           ),
@@ -695,5 +748,10 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
         ),
       ),
     );
+  }
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const SearchScreen()));
   }
 }
