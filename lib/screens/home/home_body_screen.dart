@@ -42,7 +42,7 @@ class _HomeBodyScreenState extends State<HomeBodyScreen>
         flexibleSpace: Container(
           margin: const EdgeInsets.symmetric(vertical: 10),
           height: animation.value,
-          width: animation.value,
+          // width: animation.value,
           color: primaryColor,
           child: Column(
             children: [
