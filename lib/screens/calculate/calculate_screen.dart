@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:move_mate/screens/calculate/calculate_toggle.dart';
+import 'package:move_mate/screens/success/success_screen.dart';
 
 import '../../constants/color.dart';
 import '../../widgets/search_textfield.dart';
+import 'calculate_toggle2.dart';
 
 class CalculateScreen extends StatefulWidget {
   const CalculateScreen({super.key});
@@ -314,6 +316,26 @@ class _CalculateScreenState extends State<CalculateScreen> {
                     ),
                     // Category text
                     const CalculateToggle(),
+                    const CalculateToggleTwo(),
+                    const SizedBox(
+                      height: 30.0,
+                    ),
+                    // Fourth Content
+                    SizedBox(
+                      width: double.infinity / 2,
+                      height: 50.0,
+                      child: ElevatedButton(
+                        onPressed: () => _navigateToNextScreen(context),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: secondaryColor,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32.0),
+                          ),
+                        ),
+                        child: const Text("Calculate"),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -322,5 +344,10 @@ class _CalculateScreenState extends State<CalculateScreen> {
         ),
       ),
     );
+  }
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const SuccessScreen()));
   }
 }

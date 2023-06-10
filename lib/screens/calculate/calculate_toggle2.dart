@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:move_mate/models/sending.dart';
 
-class CalculateToggle extends StatefulWidget {
-  const CalculateToggle({super.key});
+class CalculateToggleTwo extends StatefulWidget {
+  const CalculateToggleTwo({super.key});
 
   @override
-  State<CalculateToggle> createState() => _CalculateToggleState();
+  State<CalculateToggleTwo> createState() => _CalculateToggleTwoState();
 }
 
-class _CalculateToggleState extends State<CalculateToggle> {
-  List<bool> isSelected = [false, false, false, false];
+class _CalculateToggleTwoState extends State<CalculateToggleTwo> {
+  List<bool> isSelected = [false, false, false];
 
   // late final Sending sent;
 
@@ -30,7 +30,7 @@ class _CalculateToggleState extends State<CalculateToggle> {
               child: const Row(
                 children: [
                   // Icon(Icons.assignment_turned_in_outlined),
-                  Text('Documents')
+                  Text('Electronic')
                 ],
               ),
             ),
@@ -42,7 +42,7 @@ class _CalculateToggleState extends State<CalculateToggle> {
               child: const Row(
                 children: [
                   // Icon(Icons.assignment_turned_in_outlined),
-                  Text('Glass')
+                  Text('Product')
                 ],
               ),
             ),
@@ -54,19 +54,7 @@ class _CalculateToggleState extends State<CalculateToggle> {
               child: const Row(
                 children: [
                   // Icon(Icons.assignment_turned_in_outlined),
-                  Text('Liquid')
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-              child: const Row(
-                children: [
-                  // Icon(Icons.assignment_turned_in_outlined),
-                  Text('Food')
+                  Text('Others')
                 ],
               ),
             ),
