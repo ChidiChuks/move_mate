@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:move_mate/screens/splash_screen.dart';
 
@@ -31,6 +32,14 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            statusBarBrightness: Brightness.light, // For iOS: (dark icons)
+            statusBarIconBrightness:
+                Brightness.light, // For Android(M and greater): (dark icons)
+          ),
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4B3392)),
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
         useMaterial3: true,

@@ -37,115 +37,117 @@ class _HomeBodyScreenState extends State<HomeBodyScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 130.0,
+        toolbarHeight: 120.0,
         // backgroundColor: Theme.of(context).primaryColor,
         flexibleSpace: Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          height: animation.value,
-          // width: animation.value,
           color: primaryColor,
           child: Column(
             children: [
-              Container(
-                // padding: const EdgeInsets.all(10.0),
-                margin: const EdgeInsets.only(
-                  top: 10.0,
-                  bottom: 10.0,
-                  left: 10.0,
-                  right: 10.0,
-                ),
-                child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // First Row
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      // crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // profile image
-                        Container(
-                          margin: const EdgeInsets.only(right: 5.0, left: 5.0),
-                          width: 30.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          child: const CircleAvatar(
-                            backgroundColor: Colors.white70,
-                            minRadius: 60.0,
-                            child: CircleAvatar(
-                              radius: 50.0,
-                              backgroundImage: NetworkImage(
-                                "https://avatars.githubusercontent.com/u/28824477?v=4",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  // margin: const EdgeInsets.symmetric(vertical: 10),
+                  // padding: const EdgeInsets.all(10.0),
+                  margin: const EdgeInsets.only(
+                    top: 22.0,
+                    bottom: 10.0,
+                    left: 10.0,
+                    right: 10.0,
+                  ),
+                  child: Row(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // First Row
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // profile image
+                          Container(
+                            margin:
+                                const EdgeInsets.only(right: 5.0, left: 5.0),
+                            width: 30.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(40),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundColor: Colors.white70,
+                              minRadius: 60.0,
+                              child: CircleAvatar(
+                                radius: 50.0,
+                                backgroundImage: NetworkImage(
+                                  "https://avatars.githubusercontent.com/u/28824477?v=4",
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        // Column for two objects
-                        const Align(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // First Row
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Icon(
-                                    Icons.arrow_outward_outlined,
-                                    color: Color(0xFFCCC8C8),
-                                    size: 15.0,
-                                  ),
-                                  Text(
-                                    "Your location",
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.normal,
+                          // Column for two objects
+                          const Align(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // First Row
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_outward_outlined,
                                       color: Color(0xFFCCC8C8),
+                                      size: 15.0,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              // Second Row
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Wertheimer, Illinois",
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.normal,
-                                      color: Colors.white,
+                                    Text(
+                                      "Your location",
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.normal,
+                                        color: Color(0xFFCCC8C8),
+                                      ),
                                     ),
-                                  ),
-                                  Icon(
-                                    Icons.arrow_drop_down_sharp,
-                                    color: Colors.grey,
-                                    size: 15.0,
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                                // Second Row
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Wertheimer, Illinois",
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_drop_down_sharp,
+                                      color: Colors.grey,
+                                      size: 15.0,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
+                        ],
+                      ),
+                      // Bell icon
+                      Container(
+                        height: 30.0,
+                        width: 30.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(40),
                         ),
-                      ],
-                    ),
-                    // Bell icon
-                    Container(
-                      height: 30.0,
-                      width: 30.0,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(40),
+                        child: const Icon(
+                          Icons.notifications_none_outlined,
+                          color: primaryColor,
+                          size: 20,
+                        ),
                       ),
-                      child: const Icon(
-                        Icons.notifications_none_outlined,
-                        color: primaryColor,
-                        size: 20,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Container(
